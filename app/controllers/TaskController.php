@@ -18,7 +18,7 @@ class TaskController extends Controller
             $task->description = $_POST["description"];
             $task->create_date = now();
             $task->save();
-            header('Location: ' . BASE_URL . 'task');
+            header('Location: '.BASE_URL.'task/');
 
         }
         $this->view('new_task');
@@ -31,7 +31,7 @@ class TaskController extends Controller
             $task->title = $_POST["title"];
             $task->description = $_POST["description"];
             $task->save();
-            header('Location: ' . BASE_URL . 'task');
+            header('Location: '.BASE_URL.'task/');
         }
         $task = Task::find($params[0]);
         $this->view('edit_task', $task);
@@ -41,6 +41,6 @@ class TaskController extends Controller
     {
         $task = Task::find($params[0]);
         $task->delete();
-        header('Location: ' . BASE_URL . 'task');
+        header('Location: '.BASE_URL.'task/');
     }
 }

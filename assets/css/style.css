@@ -22,12 +22,12 @@ form {
     border: 1px solid #000000;
     border-radius: 5px;
     background-color: #f0f0f0;
-    animation: colorChange 0.1s  steps(3) infinite alternate;
+    animation: colorChange 0.1s steps(3) infinite alternate;
 
 }
 
 form input[type="text"] {
- 
+
     padding: 10px;
     margin: 10px 0;
     font-size: 18px;
@@ -35,7 +35,7 @@ form input[type="text"] {
     border-radius: 5px;
 }
 
-.saveButton{
+.saveButton {
     padding: 10px 20px;
     background-color: #00ff40;
     color: #fff;
@@ -46,6 +46,10 @@ form input[type="text"] {
 
 }
 
+table {
+    animation: scaleRotate 5s ease-in-out infinite;
+}
+
 table.task_list {
     width: 100%;
     border-collapse: collapse;
@@ -54,7 +58,8 @@ table.task_list {
     text-align: left;
 }
 
-table.task_list th, table.task_list td {
+table.task_list th,
+table.task_list td {
     padding: 12px 15px;
     border: 1px solid #000000;
 }
@@ -71,7 +76,7 @@ table.task_list tr:nth-child(odd) {
 
 table.task_list tr:nth-child(even) {
     background-color: #ffee00;
-    animation: colorChange 0.1s  steps(3) infinite alternate;
+    animation: colorChange 0.1s steps(3) infinite alternate;
 }
 
 @keyframes colorChange {
@@ -82,7 +87,7 @@ table.task_list tr:nth-child(even) {
     50% {
         background-color: #00ff2a;
     }
- 
+
     100% {
         background-color: #0051ff;
     }
@@ -96,7 +101,7 @@ table.task_list tr:nth-child(even) {
     50% {
         background-color: #ff0000;
     }
- 
+
     100% {
         background-color: #ff00ea;
     }
@@ -129,7 +134,7 @@ a {
     position: relative;
     transition: none;
     margin: 20px auto;
-    animation: colorChange3 0.1s steps(3) infinite alternate;
+    animation: colorChange3 0.1s steps(3) infinite alternate, scale 0.3s ease-in-out alternate infinite;
 }
 
 #newTask:hover {
@@ -139,10 +144,8 @@ a {
 
 @keyframes randomMove {
     to {
-        transform: translate(
-            calc(500px * (var(--random1, 1) - 1)),
-            calc(500px * (var(--random2, 1) - 1))
-        );
+        transform: translate(calc(500px * (var(--random1, 1) - 1)),
+                calc(500px * (var(--random2, 1) - 1)));
     }
 }
 
@@ -153,7 +156,44 @@ h1 {
     width: fit-content;
     padding: 10px 20px;
     border-radius: 5px;
-    animation: colorChange3 0.1s steps(3) infinite alternate;
+    animation: colorChange3 0.1s steps(3) infinite alternate, moveLeftRight 1s ease-in-out alternate infinite;
+
+
+}
+
+
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(-180%);
+    }
+
+    100% {
+        transform: translateX(180%);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(3);
+    }
+}
+
+@keyframes scaleRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(0) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
 }
 
 @keyframes colorChange3 {
@@ -164,7 +204,7 @@ h1 {
     50% {
         background-color: #ff00dd;
     }
- 
+
     100% {
         background-color: #33ff00;
     }
@@ -173,8 +213,36 @@ h1 {
 @keyframes colorChange4 {
     0% {
         background-color: rgb(225, 0, 255);
-    } 
+    }
+
     100% {
         background-color: #33ff00;
+    }
+}
+
+#agujero {
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    background-color: transparent;
+    box-sizing: content-box;
+    border: 1500px solid #000000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: agujero 6s ease-in-out infinite alternate;
+}
+
+@keyframes agujero {
+    0% {
+        width: 180vh;
+        height: 180vh;
+    }
+
+    100% {
+        width: 0vh;
+        height: 0vh;
     }
 }

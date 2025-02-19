@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<?= BASE_URL ?>css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
 </head>
 
 <body>
@@ -44,6 +44,7 @@
             newTask.style.setProperty('--random2', Math.random());
         });
     </script>
+    <div id="agujero"></div>
 </body>
 
 </html>
