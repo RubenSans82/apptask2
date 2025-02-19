@@ -8,7 +8,7 @@ class TaskController extends Controller
     public function index(...$params)
     {
         $task = Task::all();
-        $this->view('task_list', $task);
+        $this->view('task\task_list', $task);
     }
     public function new(...$params)
     {
@@ -21,7 +21,7 @@ class TaskController extends Controller
             header('Location: '.BASE_URL.'task/');
 
         }
-        $this->view('new_task');
+        $this->view('task\new_task');
     }
 
     public function edit(...$params)
@@ -34,7 +34,7 @@ class TaskController extends Controller
             header('Location: '.BASE_URL.'task/');
         }
         $task = Task::find($params[0]);
-        $this->view('edit_task', $task);
+        $this->view('task\edit_task', $task);
     }
 
     public function delete(...$params)
