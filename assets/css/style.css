@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ff00f2;
+    display: grid;
+    animation: colorChange4 0.5s infinite alternate;
+}
+
+form {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    animation: colorChange 0.1s  steps(3) infinite alternate;
+
+}
+
+form input[type="text"] {
+ 
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.saveButton{
+    padding: 10px 20px;
+    background-color: #00ff40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: colorChange2 0.1s steps(3) infinite alternate;
+
+}
+
+table.task_list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+table.task_list th, table.task_list td {
+    padding: 12px 15px;
+    border: 1px solid #000000;
+}
+
+table.task_list th {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+table.task_list tr:nth-child(odd) {
+    background-color: #0051ff;
+    animation: colorChange2 0.1s steps(3) infinite alternate;
+}
+
+table.task_list tr:nth-child(even) {
+    background-color: #ffee00;
+    animation: colorChange 0.1s  steps(3) infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #ffee00;
+    }
+
+    50% {
+        background-color: #00ff2a;
+    }
+ 
+    100% {
+        background-color: #0051ff;
+    }
+}
+
+@keyframes colorChange2 {
+    0% {
+        background-color: #0051ff;
+    }
+
+    50% {
+        background-color: #ff0000;
+    }
+ 
+    100% {
+        background-color: #ff00ea;
+    }
+}
+
+
+
+table.task_list a {
+    color: #864c00;
+    text-decoration: none;
+}
+
+table.task_list a:hover {
+    text-decoration: underline;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00ff40;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+
+#newTask {
+    position: relative;
+    transition: none;
+    margin: 20px auto;
+    animation: colorChange3 0.1s steps(3) infinite alternate;
+}
+
+#newTask:hover {
+    animation: randomMove 0.1s forwards;
+
+}
+
+@keyframes randomMove {
+    to {
+        transform: translate(
+            calc(500px * (var(--random1, 1) - 1)),
+            calc(500px * (var(--random2, 1) - 1))
+        );
+    }
+}
+
+h1 {
+    text-align: center;
+    margin: 20px auto;
+    background-color: rgb(1, 255, 242);
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: colorChange3 0.1s steps(3) infinite alternate;
+}
+
+@keyframes colorChange3 {
+    0% {
+        background-color: rgb(1, 255, 242);
+    }
+
+    50% {
+        background-color: #ff00dd;
+    }
+ 
+    100% {
+        background-color: #33ff00;
+    }
+}
+
+@keyframes colorChange4 {
+    0% {
+        background-color: rgb(225, 0, 255);
+    } 
+    100% {
+        background-color: #33ff00;
+    }
+}
